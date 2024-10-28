@@ -1,0 +1,440 @@
+//1.To find largest of three numbers
+
+import java.lang.*;
+class CommandLine
+{
+public static void main(String ar[])
+{
+int a,b,c;
+a=Integer.parseInt(ar[0]);
+b=Integer.parseInt(ar[1]);
+c=Integer.parseInt(ar[2]);
+if(a>b && a>c)
+System.out.println("Greater is "+a);
+else if(b>c && b>a)
+System.out.println("Greater is "+b);
+else
+System.out.println("Greater is "+c);
+}
+}
+
+//2.To Find Factorial of a number using BufferedReader
+import java.io.*;
+class Factorial
+{
+public static void main(String z[])throws IOException
+{
+BufferedReader br=new BufferedReader(new
+InputStreamReader(System.in));
+int n,fact=1;
+System.out.println("enter a no.");
+n=Integer.parseInt(br.readLine());
+for(int i=1; i<=n; i++)
+{
+fact=fact*i;
+}
+System.out.println("factorial is:"+fact);
+}
+}
+
+//3.Write a program to determine the sum of the following series.
+
+//5.Write a program to count the number of digits and sum of all digits of the user entered number.
+Also find the reverse of the number. Using a while loop.
+import java.io.*;
+class Digits
+{
+public static void main(String args[]) throws IOException
+{
+int sum=0,n,rev=0,c=0;
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter any number");
+n=Integer.parseInt(br.readLine());
+while(n!=0)
+{
+sum+=n%10;
+rev=((rev*10)+(n%10));
+n/=10;
+c++;
+}
+System.out.println("Sum="+sum);
+System.out.println("Reverse="+rev);
+System.out.println("No. of digits="+c);
+}
+}
+
+//6.To determine whether the given number is armstrong or not.
+import java.io.*;
+class Armstrong
+{
+public static void main(String argz[])throws IOException
+{
+int sum=0,digit,n,copy;
+String str;
+BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+System.out.println("enter a number");
+str=br.readLine();
+n=Integer.parseInt(str);
+copy=n;
+while(n!=0)
+{
+digit=n%10;
+sum=sum+digit*digit*digit;
+n=n/10;
+}
+if(sum==copy)
+System.out.println("armstrong number");
+else
+System.out.println("not a armstrong number");
+}
+}
+
+//7.Write a Program using a switch case.
+import java.util.*;
+class Switch
+{
+public static void main(String a[])
+{
+Scanner s=new Scanner(System.in);
+int n,rem,rev=0,ch;
+System.out.println("Enter no ");
+n=s.nextInt();
+while(n>0)
+{
+rem=n%10;
+rev=(rev*10)+rem;
+n=n/10;
+}
+while(rev>0)
+{
+ch=rev%10;
+switch(ch)
+{
+case 1: {
+System.out.print(" One");
+break;
+}
+case 2: {
+System.out.print(" Two");
+break;
+}
+case 3: {
+System.out.print(" Three");
+break;
+}
+case 4: {
+System.out.print(" four");
+break;
+}
+case 5: {
+System.out.print(" five");
+break;
+}
+case 6: {
+System.out.print(" Six");
+break;
+}
+case 7: {
+System.out.print(" Seven");
+break;
+}
+case 8: {
+System.out.print(" Eight");
+break;
+}
+case 9: {
+System.out.print(" Nine");
+break;
+}
+case 0: {
+System.out.print(" Zero");
+break;
+}
+}
+rev=rev/10;
+}
+}
+
+//8.Write a program to implement sequential search algorithm
+import java.io.*;
+class Search
+{
+public static void main(String arg[])throws IOException
+{
+int n,i,search;
+String str;
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.print("Enter the no. of element:");
+str=br.readLine();
+n=Integer.parseInt(str);
+int a[]=new int[n];
+for(i=0; i<=n-1; i++)
+{
+System.out.print("Enter the no.:");
+str=br.readLine();
+a[i]=Integer.parseInt(str);
+}
+System.out.print("Enter the no. to be searched:");
+str=br.readLine();
+search=Integer.parseInt(str);
+for(i=0; i<=n-1; i++)
+{
+if(search==a[i])
+break;
+}
+if(i==n)
+System.out.println("No. not found");
+else
+System.out.println("Index=" +i);
+}
+}
+
+//9.Write a program to sort the array elements in ascending order.
+import java.util.*;
+class Bubble
+{
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);
+int i,j,n,temp;
+System.out.println("Enter no of elements to be sorted");
+n=s.nextInt();
+int a[]=new int[n];
+System.out.println("Enter "+n+" elements");
+for(i=0; i<n; i++)
+{
+a[i]=s.nextInt();
+}
+for(i=0; i<n-1; i++)
+{
+for(j=0; j<n-1; j++)
+{
+if(a[j]>a[j+1])
+{
+temp=a[j];
+a[j]=a[j+1];
+a[j+1]=temp;
+}
+}
+}
+System.out.println("Sorted array in ascending order is");
+for(i=0; i<n; i++)
+{
+System.out.println(" "+a[i]);
+}
+}
+}
+
+//10.Write a program to read data and determine the following:
+1. Total marks obtained by each student.
+2. Student who obtained the highest total marks.
+import java.io.*;
+class Exam
+{
+public static void main(String args[]) throws IOException
+{
+int i,j,largeroll,largetotal;
+String str;
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+int a[][]=new int[7][7];
+for(i=0; i<=4; i++)
+{
+System.out.print("enter roll no and marks in three subjects:");
+str=br.readLine();
+a[i][0]=Integer.parseInt(str);
+str=br.readLine();
+a[i][1]=Integer.parseInt(str);
+str=br.readLine();
+a[i][2]=Integer.parseInt(str);
+str=br.readLine();
+a[i][3]=Integer.parseInt(str);
+a[i][4]=a[i][1]+a[i][2]+a[i][3];
+}
+System.out.println("roll no\tsub 1\tsub 2\tsub 3\ttotal\n");
+for(i=0; i<=4; i++)
+{
+for(j=0; j<=4; j++)
+{
+System.out.print(a[i][j]+"\t");
+}
+System.out.println();
+}
+largeroll=a[0][0];
+largetotal=a[0][4];
+for(j=0; j<=4; j++)
+{
+if(a[i][4]>largetotal)
+{
+largeroll=a[i][0];
+largetotal=a[i][4];
+}
+}
+System.out.println("Highest total marks is:"+largetotal);
+System.out.println("Highest marks obtained by student with roll no:"+largeroll);
+}
+}
+
+//11.To count the number of vowels,blank spaces,digits & consonants in a String.
+import java.util.*;
+class Vowel
+{
+public static void main(String z[])
+{
+Scanner s=new Scanner(System.in);
+String st;
+System.out.println("enter a string");
+st=s.nextLine();
+int n=st.length();
+char c[]=new char[n];
+c=st.toCharArray();
+int vowel=0,consonent=0,blank=0,digit=0;
+for(int i=0; i<n; i++)
+{
+if(c[i]>='0' && c[i]<='9')
+{
+digit++;
+}
+else if(c[i]==' ')
+blank++;
+else if((c[i]>='A' && c[i]<='Z')||(c[i]>='a' &&c[i]<='z'))
+{
+if(c[i]=='a' ||c[i]=='e' ||c[i]=='i' ||c[i]=='o' ||c[i]=='u' ||c[i]=='A'
+||c[i]=='E' ||c[i]=='I'
+||c[i]=='O' ||c[i]=='U' )
+vowel++;
+else consonent++;
+}
+}
+System.out.println(" blank space:" +blank+" \ndigits are:"+digit+" \nvowels
+are:"+vowel
++"\nconsonent are:"+consonent);
+}
+}
+
+//12.Write a program to check string is palindrome or not
+import java.io.*;
+class Palindrome {
+public static void main(String args[]) throws IOException {
+String str, rev;
+StringBuffer strl = new StringBuffer();
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter a string");
+str = br.readLine();
+strl.append(str);
+strl.reverse();
+rev = strl.toString();
+if (str.equalsIgnoreCase(rev)) {
+System.out.println("palindrome");
+} else {
+System.out.println("not palindrome");
+}
+}
+}
+
+//13.Write a program that accepts a shopping list of items and perform the following operation:
+1. Add an item at a specified location
+2. Delete an item from list
+3. Print the contents of the vector
+import java.util.*;
+import java.io.*;
+class Shopping{
+public static void main(String args[])throws IOException{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+String str;
+Vector v=new Vector();
+int i,choice=0;
+System.out.println("enter 5 items");
+for(i=0;i<=4;i++){
+str=br.readLine();
+v.addElement(str);}
+while(choice!=4){
+System.out.println("1.Add new item\n2.delete item\n3.display item\n4.exit\nenter your
+choice:");
+str=br.readLine();
+choice=Integer.parseInt(str);
+switch(choice){
+case 1:{
+System.out.println("enter the name");
+str=br.readLine();
+v.addElement(str);
+break;}
+case 2:{
+System.out.println("enter the name");
+str=br.readLine();
+v.removeElement(str);
+break;}
+case 3:{
+System.out.println("enter the index");
+str=br.readLine();
+i=Integer.parseInt(str);
+System.out.println("Name:"+v.elementAt(i));
+break;}
+case 4:
+break;
+default:
+System.out.println("invalid choice");}
+System.out.println("current list");
+for(i=0;i<=v.size()-1;i++){
+System.out.println(v.elementAt(i));}}}}
+
+//14.Write a program to find the values of nCr and nPr.
+import java.io.*;
+class Factorial
+{
+public static void main(String args[])throws IOException
+{
+int n,r,ncr,npr;
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+String str;
+System.out.println("Enter the values of n and r to find nCr.");
+str=br.readLine();
+n=Integer.parseInt(str);
+str=br.readLine();
+r=Integer.parseInt(str);
+ncr=fact(n)/(fact(r)*fact(n-r));
+System.out.println("nCr="+ncr);
+System.out.println("Enter the values of n and r to find npr");
+str=br.readLine();
+n=Integer.parseInt(str);
+str=br.readLine();
+r=Integer.parseInt(str);
+npr=fact(n)/fact(n-r);
+System.out.println("nPr="+npr);
+}
+static int fact(int n)
+{
+int i,fact=1;
+for(i=1; i<=n; i++)
+{
+fact=fact*i;
+}
+return fact;
+}
+}
+
+//15.Write a program to accept a number and compute the summation of digits recursively.
+import java.io.*;
+class Digits
+{
+public static void main(String args[])throws IOException
+{
+int n,sum;
+BufferedReader br=new BufferedReader(new
+InputStreamReader(System.in));
+String str;
+System.out.println("Enter a no");
+str=br.readLine();
+n=Integer.parseInt(str);
+sum=add(n);
+System.out.println("Sum of digits="+sum);
+}
+static int add(int n)
+{
+if(n==0)
+return 0;
+else
+return(n%10+add(n/10));
+}
+}
+
+//10.
